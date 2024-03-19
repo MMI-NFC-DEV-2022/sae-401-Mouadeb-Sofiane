@@ -92,6 +92,36 @@ export type Database = {
         }
         Relationships: []
       }
+      Films: {
+        Row: {
+          date_film: string | null
+          description_film: string | null
+          id: number
+          image_film: string | null
+          note_film: number | null
+          temps_film: string | null
+          titre_film: string | null
+        }
+        Insert: {
+          date_film?: string | null
+          description_film?: string | null
+          id?: number
+          image_film?: string | null
+          note_film?: number | null
+          temps_film?: string | null
+          titre_film?: string | null
+        }
+        Update: {
+          date_film?: string | null
+          description_film?: string | null
+          id?: number
+          image_film?: string | null
+          note_film?: number | null
+          temps_film?: string | null
+          titre_film?: string | null
+        }
+        Relationships: []
+      }
       Maison: {
         Row: {
           adresse: string | null
