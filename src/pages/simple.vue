@@ -1,22 +1,18 @@
 <script setup lang="ts">
-import AfficheMaison from '@/components/AfficheMaison.vue';
-import type { SchemaOffreMaison } from '@/types';
+import AfficheFilm from '@/components/AfficheFilm.vue';
+import type { SchemaFilms } from '@/types';
 
-    const maMaison :SchemaOffreMaison = {
-        nomMaison: "Maison",
-        prix: 1000,
-        adresse: "123 rue de la maison",
-        nbrChambres: 3,
-        nbrSDB: 2,
-        favori: true,
-        image: "\public\pexels-binyamin-mellish-106399.jpg",
-        surface: '30x40m²',
+    const monFilm :SchemaFilms = {
+        titre_film: "Titre du film",
+        note_film: 5,
+        description_film: "Ceci est une description du film",
+        image_film: "\public\pexels-binyamin-mellish-106399.jpg",
     };
 </script>
 
 <template>
     <div class="grid grid-cols-3 gap-4">
-        <AfficheMaison :nom-maison="maMaison.nomMaison" :prix="maMaison.prix" :adresse="maMaison.adresse" :nbr-chambres="maMaison.nbrChambres" :nbr-sdb="maMaison.nbrSDB" :favori="maMaison.favori" :image="maMaison.image" :surface="maMaison.surface"/>
+        <AfficheMFilm :nom-film="monFilm.titre_film" :note="monFilm.note_film" :description="monFilm.description_film" :image_projet="monFilm.image_film" />
     </div>
-    <AfficheMaison nom-maison="Maison" :favori="true" image="\pexels-binyamin-mellish-106399.jpg"/>
+    <AfficheFilm titre-film="Titre du film" :favori="true" image_film="\pexels-binyamin-mellish-106399.jpg"/>
 </template>
