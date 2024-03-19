@@ -13,6 +13,5 @@ let {data : tableaumaisons, error} = await supabase
 <template>
     <div class="grid grid-cols-3 gap-4">
         <AfficheMaison v-for="maison in tableaumaisons" v-bind="maison" />
-
     </div>
 </template>
