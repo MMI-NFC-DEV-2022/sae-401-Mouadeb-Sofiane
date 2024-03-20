@@ -5,7 +5,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 </script>
 <template>
     <RouterLink :to="`/maisons/${id}`">
-    <div class="p-4 max-w-sm">
+        <div class="p-4 max-w-sm">
             <div class="flex rounded-lg h-full dark:bg-white bg-teal-400 p-8 flex-col">
                 <div class="flex items-center mb-3">
                     <img :src="image_film" alt="Placeholder Image" class="w-40 h-70 rounded-lg object-cover object-center mb-6">
