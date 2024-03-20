@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router/auto';
 import { supabase } from '@/supabase';
-import AfficheSingle from '@/components/AfficheSingle.vue';
+import AfficheSupport from '@/components/AfficheSupport.vue';
 
-const route = useRoute('/maisons/[id]');
+const route = useRoute('/support/[id]');
 
 let {data : film, error} = await supabase
     .from('Films')
@@ -24,6 +24,6 @@ console.log("data film",film);
 
 <template>
     <div>
-        <AfficheSingle v-bind="film" />
+        <AfficheSupport v-bind="film" />
     </div>
 </template>

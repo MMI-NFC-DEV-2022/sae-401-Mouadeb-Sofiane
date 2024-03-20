@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import type { SchemaFilms } from '@/types';
-defineProps<SchemaFilms>()
+import type { Database, Tables } from '@/supabase-types';
+defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'Celebrite'>[]} & {Genre:Tables<'Genre'>[]} & {Saga:Tables<'Saga'>[]} & {Variante:Tables<'Variante'>} & {Support:Tables<'Support'>} & {Plateforme:Tables<'Plateforme'>}>()
 </script>
 <template>
     <RouterLink :to="`/maisons/${id}`">

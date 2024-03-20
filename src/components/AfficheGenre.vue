@@ -2,7 +2,7 @@
 import { useRoute } from 'vue-router/auto';
 import { defineProps } from 'vue';
 import { supabase } from '@/supabase';
-const route = useRoute('/maisons/[id]');
+const route = useRoute('/genre/[id]');
 import type { Database, Tables } from '@/supabase-types';
 defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'Celebrite'>[]} & {Genre:Tables<'Genre'>[]} & {Saga:Tables<'Saga'>[]} & {Variante:Tables<'Variante'>} & {Support:Tables<'Support'>} & {Plateforme:Tables<'Plateforme'>}>()
 </script>
@@ -10,7 +10,6 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 <template>
     <div>
         <h2>{{ titre_film }}</h2>
-        <img :src="image_film" />
         <p>{{ description_film }}</p>
         <p>{{ note_film }}</p>
         <p>{{ date_film }}</p>
@@ -18,10 +17,5 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         <p v-for="uneCelbrite in Celebrite">{{ uneCelbrite.nom_celebrite }}</p>
         <p v-for="uneCelbrite in Celebrite">{{ uneCelbrite.prenom_celebrite }}</p>
         <p v-for="unGenre in Genre">{{ unGenre.genre_film }}</p>
-        <RouterLink :to="`/celebrite/${id}`">Celebrite</RouterLink>
-        <RouterLink :to="`/genre/${id}`">Genre</RouterLink>
-        <RouterLink :to="`/plateforme/${id}`">Plateforme</RouterLink>
-        <RouterLink :to="`/support/${id}`">Support</RouterLink>
-        <RouterLink :to="`/saga/${id}`">Saga</RouterLink>
     </div>
 </template>
