@@ -17,6 +17,9 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         <p>{{ temps_film }}</p>
         <p v-for="uneCelbrite in Celebrite">{{ uneCelbrite.nom_celebrite }}</p>
         <p v-for="uneCelbrite in Celebrite">{{ uneCelbrite.prenom_celebrite }}</p>
+        <div v-for="uneCelbrite in Celebrite">{{ uneCelbrite.photo_celebrite }}
+            <img :src="photo_celebrite" />
+        </div>
         <p v-for="unGenre in Genre">{{ unGenre.genre_film }}</p>
         <RouterLink :to="`/celebrite/${id}`">Celebrite</RouterLink>
         <RouterLink :to="`/genre/${id}`">Genre</RouterLink>
