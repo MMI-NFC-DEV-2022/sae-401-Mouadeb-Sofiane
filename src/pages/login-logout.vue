@@ -23,14 +23,20 @@
       error.value = error.message;
     }
   };
+
+  const signInWithGithub = async () => {
+    try {
+      await supabase.auth.signIn({ provider: 'github' });
+    } catch (error) {
+      console.error('Error signing in with GitHub:', error.message);
+      error.value = error.message;
+    }
+  };
 </script>
 
 <template>
   <div class="flex items-center">
-    <button v-if="user" @pointerdown="supabase.auth.signOut()" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out">
-      Se déconnecter ({{ user.email }})
-    </button>
-    <div v-else>
+    <div v-if="!user">
       <input v-model="email" type="email" placeholder="E-mail" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
       <input v-model="password" type="password" placeholder="Mot de passe" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
       <button @click="signInWithEmail" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out">
@@ -38,5 +44,11 @@
       </button>
       <p v-if="error" class="text-red-500">{{ error }}</p>
     </div>
+    <button v-if="!user" @click="signInWithGithub" class="bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out">
+      Se connecter avec GitHub
+    </button>
+    <button v-if="user" @pointerdown="supabase.auth.signOut()" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out">
+      Se déconnecter ({{ user.email }})
+    </button>
   </div>
 </template>
