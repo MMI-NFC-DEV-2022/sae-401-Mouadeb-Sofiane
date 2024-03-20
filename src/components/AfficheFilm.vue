@@ -10,7 +10,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
                 <div class="flex items-center mb-3">
                     <img :src="image_film" alt="Placeholder Image" class="w-40 h-70 rounded-lg object-cover object-center mb-6">
                 </div>
-            </div>  
+            </div>     
         </div>
     </RouterLink>
 </template>
