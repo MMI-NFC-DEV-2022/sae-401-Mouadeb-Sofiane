@@ -33,7 +33,6 @@
     }
   };
 </script>
-
 <template>
   <div class="flex items-center">
     <div v-if="!user">
