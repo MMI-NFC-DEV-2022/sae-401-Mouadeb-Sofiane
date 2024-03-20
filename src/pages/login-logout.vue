@@ -12,9 +12,11 @@
         email: email.value,
         password: password.value
       });
+
       if (error) {
         throw error;
       }
+
       console.log('Signed in successfully', user);
     } catch (error) {
       console.error('Error signing in:', error.message);
