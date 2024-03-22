@@ -3,7 +3,7 @@ import { useRoute } from 'vue-router/auto';
 import { supabase } from '@/supabase';
 import AfficheSingle from '@/components/AfficheSingle.vue';
 
-const route = useRoute('/maisons/[id]');
+const route = useRoute('/films/[id]');
 
 let {data : film, error} = await supabase
     .from('Films')
