@@ -8,23 +8,23 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 </script>
 
 <template>
-    <div class="p-5 pb-24 bg-pink-100">
+    <div class="p-5 pb-24 bg-pink-100" style="font-family:'Poppins';">
         <div v-for="unePlateforme in Plateforme">
-            <h1 class="text-center text-6xl mb-16 mt-16">{{ unePlateforme.plateforme_streaming }}</h1>
+            <h1 class="text-center text-6xl mb-16 mt-16" style="font-family:'Viga';">{{ unePlateforme.plateforme_streaming }}</h1>
             <div class="flex gap-4">
                 <img :src="unePlateforme.logo" class="w-40 h-44">
             
                 <div class="flex flex-col">
                     <div class="flex pb-2">
-                        <p class="text-l underline">Description du support</p>
+                        <p class="text-l underline" style="font-family:'Viga';">Description du support</p>
                         <p class="ml-5 text-justify">{{ unePlateforme.description_support }}</p>
                     </div>
                     <div class="flex pb-2">
-                        <p class="text-l underline">Prix du support</p>
+                        <p class="text-l underline" style="font-family:'Viga';">Prix du support</p>
                         <p class="ml-5">{{ unePlateforme.plateforme_prix }} €</p>
                     </div>
                     <div class="flex pb-2">
-                        <a :href="unePlateforme.lien_support" class="rounded-md p-2 bg-slate-500 text-center">Lien vers le support</a>
+                        <a :href="unePlateforme.lien_support" class="rounded-md p-2 bg-slate-500 text-center" style="font-family:'Viga';">Lien vers le support</a>
                     </div>
                 </div>
             </div>

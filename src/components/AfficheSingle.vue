@@ -9,27 +9,27 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 
 <template>
     
-    <div class="p-5 bg-pink-100">
-        <h1 class="text-center text-6xl mb-16 mt-16">{{ titre_film }}</h1>
+    <div class="p-5 bg-pink-100" style="font-family:'Poppins';">
+        <h1 class="text-center text-6xl mb-16 mt-16" style="font-family:'Viga';">{{ titre_film }}</h1>
         
     <div class="flex gap-4">
     <img :src="image_film" class="rounded-xl object-cover" /> <!-- Placer l'image à gauche -->
     <div>
         <div class="flex flex-col">
             <div class="flex pb-2">
-            <p class="text-l underline">Date de sortie du film</p>
+            <p class="text-l underline" style="font-family:'Viga';">Date de sortie du film</p>
             <p class="text-l ml-5">{{ date_film }}</p>
         </div>
         <div class="flex pb-2">
-            <p class="text-l underline">Les variantes du film </p>
+            <p class="text-l underline" style="font-family:'Viga';">Les variantes du film </p>
             <p v-for="uneVariante in Variante" class="text-l ml-10"> {{ uneVariante.type }} </p>
         </div>
         <div class="flex pb-2">
-            <p class="text-l underline">Durée du film</p>
+            <p class="text-l underline" style="font-family:'Viga';">Durée du film</p>
             <p class="text-l ml-10">{{ temps_film }}</p>
         </div>
         <div class="flex pb-2">
-            <p class="underline">Note du film</p>
+            <p class="underline" style="font-family:'Viga';">Note du film</p>
             <div class="flex ml-8 pl-2 pb-2">
                 <div v-for="n in note_film ?? 0" class="text-gray-400">
                     <svg class="w-5 h-5 fill-current text-yellow-500" viewBox="0 0 24 24">
@@ -44,13 +44,13 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             </div>
         </div>
         <div class="flex">
-            <h2 class="underline">Genre du film</h2>
+            <h2 class="underline" style="font-family:'Viga';">Genre du film</h2>
                 <p v-for="unGenre in Genre" class="ml-5">{{ unGenre.genre_film }}</p>
         </div>
         </div>
-        <h2 class="mt-5 underline mb-3">Synopsis </h2>
+        <h2 class="mt-5 underline mb-3" style="font-family:'Viga';">Synopsis </h2>
             <p class="text-justify">{{ description_film }}</p>
-            <h2 class="mt-5 underline mb-3">Acteurs </h2>
+            <h2 class="mt-5 underline mb-3" style="font-family:'Viga';">Acteurs </h2>
             <div class="flex gap-2">
                 <div v-for="(uneCelbrite, index) in Celebrite" :key="index">
                     <RouterLink :to="{ name: '/celebrite/[id]', params: { id: uneCelbrite.id } }">
@@ -65,7 +65,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <p class="text-l underline"></p>
             <div v-for="(uneSaga, index) in Saga" :key="index">
                 <RouterLink :to="{ name: '/saga/[id]', params: { id: uneSaga.id } }">
-                    <p class="text-l ml-10 flex gap-4"> Saga du fim : <p class="text-blue-500" v-for="uneSaga in Saga">{{ uneSaga.nom_de_la_saga }}</p></p>
+                    <p class="text-l ml-10 flex gap-4" style="font-family:'Viga';"> Saga du fim : <p class="text-blue-500" v-for="uneSaga in Saga">{{ uneSaga.nom_de_la_saga }}</p></p>
                 </RouterLink>
             </div>
         </div>
@@ -74,7 +74,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-10">
         <div v-for="unSupport in Support" class="ml-10">
-        <h2 class="text-2xl">Où acheter</h2>
+        <h2 class="text-2xl" style="font-family:'Viga';">Où acheter</h2>
             <div class="ml-10">
                 <p>{{ unSupport.support_type }}</p>
                     <img :src="unSupport.support_img">
@@ -87,7 +87,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             </div>
         </div>
         <div v-for="unePlateforme in Plateforme" class="ml-10">
-        <h2 class="text-2xl">Où louer</h2>
+        <h2 class="text-2xl" style="font-family:'Viga';">Où louer</h2>
             <div class="ml-10">
                 <p>{{ unePlateforme.plateforme_streaming }}</p>
                     <img :src="unePlateforme.logo">
@@ -156,5 +156,16 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         border-left: 4px solid #4299e1; /* Ajout d'une bordure à gauche pour chaque commentaire */
         padding-left: 1rem; /* Ajout de marge intérieure à gauche pour séparer le texte de la bordure */
     }
-   
+    @font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Viga";
+  src: url("../fonts/Viga-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 </style>

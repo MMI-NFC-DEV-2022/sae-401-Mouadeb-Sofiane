@@ -27,7 +27,7 @@ if (route.params.id) {
 
 <template>
     <div>
-        <div class="p-2 bg-slate-400">
+        <div class="p-2 bg-pink-100" style="font-family:'Poppins';">
             <h2 class="text-2xl">
                 Résultat (Prévisualisation)
             </h2>
