@@ -11,10 +11,10 @@ defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'
     <div class="p-5 bg-pink-100" style="font-family:'Poppins';">
         <div>
             <h1 class="text-center text-6xl mb-16 mt-16" style="font-family:'Viga';">{{ prenom_celebrite }} {{ nom_celebrite }}</h1>
-                <div class="flex gap-4">
-                <img :src="photo_celebrite ?? undefined" class="object-cover rounded-md w-56">
+                <div class="flex flex-col lg:flex-row gap-4">
+                <img :src="photo_celebrite ?? undefined" class="w-56 m-auto rounded-md object-cover mb-16">
             
-                <div class="flex flex-col">
+                <div class="">
                     <div class="flex pb-2">
                         <p class="text-l underline"style="font-family:'Viga';">Nationnalité</p>
                         <p class="ml-5 text-justify">{{ nationnalite_celebrite }}</p>
@@ -23,13 +23,11 @@ defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'
                         <p class="ml-5">{{ date_naissance }}</p>
                     </div>
                     
-                    <div class="flex mt-10 pb-2">
+                    <div class="mt-10 pb-2">
                         <p class="text-l underline" style="font-family:'Viga';">Biographie</p>
-                        <p class="ml-5  text-justify">{{ bio_celebrite }}</p>
+                        <p class="ml-5 text-justify">{{ bio_celebrite }}</p>
                     </div>
-                    <div class="flex pb-2">
-                        
-                    </div>  
+                    
                 </div>
             </div>
         </div>

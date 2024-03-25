@@ -10,11 +10,11 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
 <template>
      <div class="p-5 pb-24 bg-pink-100" style="font-family:'Poppins';">
         <div >
-            <h1 class="text-center text-6xl mb-16 mt-16 flex flex-col lg:flex-row"  style="font-family:'Viga';">{{ nom_de_la_saga }}</h1>
-            <div class="flex gap-4">
-                <img :src="image_saga ?? undefined" class="w-40 h-44 m-auto object-cover">
+            <h1 class="text-center text-6xl mb-16 mt-16 "  style="font-family:'Viga';">{{ nom_de_la_saga }}</h1>
+            <div class="flex flex-col lg:flex-row gap-4">
+                <img :src="image_saga ?? undefined" class="w-40 h-44 m-auto rounded-md object-cover mb-16">
             
-                <div class="flex flex-col lg:flex-row">
+                <div class="">
                     <div class="flex pb-2">
                         <p class="text-l underline"  style="font-family:'Viga';">Synopsis de la saga</p>   
                     </div>
