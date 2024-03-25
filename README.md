@@ -24,5 +24,7 @@ page d'une support[support](https://filmsm.mouadeb.fr/support/7)
 
 page d'un acteur [acteur](https://filmsm.mouadeb.fr/celebrite/1)
 
-Sur la page film on peut accèder aux pages des acteur ayant joué dedans, de sa saga, des plateformes sur lesquelle il est disponible et également des lien externes pour acheter le film sur les support sur lesquels il est disponible. 
+Sur la page film on peut accèder aux pages des acteur ayant joué dedans, de sa saga, des plateformes sur lesquelle il est disponible et également des lien externes pour acheter le film sur les support sur lesquels il est disponible. Et les commentaires.
+
+Sur la page d'acteur on peut accèder à un acteur, dans la page un seul acteur, il y a les films dans lequel il a joué.
 
