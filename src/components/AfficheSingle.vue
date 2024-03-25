@@ -55,6 +55,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
                         <RouterLink :to="{ name: '/celebrite/[id]', params: { id: uneCelbrite.id } }">
                             <img :src="uneCelbrite.photo_celebrite ?? undefined" class="rounded-full w-24" alt="Photo Acteurs" />
                         </RouterLink>
+                        <p class="text-center">{{ uneCelbrite.prenom_celebrite }}</p>
                     </div>
                     </div>
                 </div>
