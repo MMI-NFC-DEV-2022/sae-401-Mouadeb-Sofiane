@@ -6,7 +6,7 @@ URL Netlify : https://harmonious-treacle-e1cccd.netlify.app/
 
 URL site : [Accueil](https://filmsm.mouadeb.fr/)
 
-Page pour rajouter des films fonctionne si les rls sont desativés(regardez vos mails)[Ajout de film](https://filmsm.mouadeb.fr/films/edit/)
+Page pour rajouter des films fonctionne si les rls sont desativés(regardez vos mails)[Ajout des films](https://filmsm.mouadeb.fr/films/edit/)
 
 Impossibilité de se connecter avec github(regardez vos mails)[connexion](https://filmsm.mouadeb.fr/login-logout)
 
@@ -14,11 +14,11 @@ page de tout les films [tout les films](https://filmsm.mouadeb.fr/films)
 
 page d'un film [film](https://filmsm.mouadeb.fr/films/2)
 
-page d'une saga [Saga](https://filmsm.mouadeb.fr/saga/2)
+page d'une saga [saga](https://filmsm.mouadeb.fr/saga/2)
 
 page d'une plateforme de streaming [plateforme](https://filmsm.mouadeb.fr/plateforme/2)
 
-page de tous les célébrite [Celebrite](https://filmsm.mouadeb.fr/celebrite)
+page de tous les célébrite [toute les celebrites](https://filmsm.mouadeb.fr/celebrite)
 
 page d'une support[support](https://filmsm.mouadeb.fr/support/7)
 
