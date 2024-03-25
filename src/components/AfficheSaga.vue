@@ -10,23 +10,23 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
 <template>
      <div class="p-5 pb-24 bg-pink-100" style="font-family:'Poppins';">
         <div >
-            <h1 class="text-center text-6xl mb-16 mt-16" style="font-family:'Viga';">{{ nom_de_la_saga }}</h1>
+            <h1 class="text-center text-6xl mb-16 mt-16 flex flex-col lg:flex-row"  style="font-family:'Viga';">{{ nom_de_la_saga }}</h1>
             <div class="flex gap-4">
-                <img :src="image_saga" class="w-40 h-44 object-cover">
+                <img :src="image_saga ?? undefined" class="w-40 h-44 m-auto object-cover">
             
-                <div class="flex flex-col">
+                <div class="flex flex-col lg:flex-row">
                     <div class="flex pb-2">
-                        <p class="text-l underline" style="font-family:'Viga';">Synopsis de la saga</p>   
+                        <p class="text-l underline"  style="font-family:'Viga';">Synopsis de la saga</p>   
                     </div>
-                    <p class="ml-5 mr-5 text-justify" style="font-family:'Poppins';">{{ description_saga }}</p>
+                    <p class="ml-5 mr-5 text-justify flex flex-col lg:flex-row" style="font-family:'Poppins';">{{ description_saga }}</p>
                 </div>
                 
             </div>
         </div>
         <div>
             <p class="text-center mt-5 text-3xl" style="font-family:'Viga';">Les films issus de la saga</p>
-            <div class="flex gap-5 mt-8 m-auto">
-                    <img v-for="unFilm in Films" class="rounded-md m-auto w-40" :src="unFilm.image_film" >
+            <div class="flex-col lg:flex-row flex gap-5 mb-7 mt-8 m-auto">
+                    <img v-for="unFilm in Films" class="rounded-md m-auto w-40" :src="unFilm.image_film ?? undefined" >
             </div>
         </div>
     </div>

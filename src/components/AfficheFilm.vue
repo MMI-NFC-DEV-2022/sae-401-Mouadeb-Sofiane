@@ -8,7 +8,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         <div class="p-4 max-w-sm">
             <div class="flex rounded-lg h-full dark:bg-white bg-teal-400 p-8 flex-col">
                 <div class="flex items-center mb-3">
-                    <img :src="image_film" alt="Placeholder Image" class="bg-teal-400 w-fullrounded-lg object-cover object-center mb-6">
+                    <img :src="image_film ?? undefined" alt="Placeholder Image" class="bg-teal-400 w-fullrounded-lg object-cover object-center mb-6">
                 </div>
                 <div class="flex gap-7">
                         <p class="text-gray-900 text-lg font-medium title-font" style="font-family:'Viga';">{{ titre_film }}</p>

@@ -8,18 +8,16 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 </script>
 
 <template>
-    
-    <div class="p-5 bg-pink-100" style="font-family:'Poppins';">
-        <h1 class="text-center text-6xl mb-16 mt-16" style="font-family:'Viga';">{{ titre_film }}</h1>
-        
-    <div class="flex gap-4">
-    <img :src="image_film" class="rounded-xl object-cover" /> <!-- Placer l'image à gauche -->
-    <div>
+<div class="p-5 bg-pink-100" style="font-family: 'Poppins';">
+    <h1 class="text-center text-6xl mb-16 mt-16" style="font-family: 'Viga';">{{ titre_film }}</h1>
+    <div class="flex flex-col lg:flex-row gap-4">
+      <img :src="image_film ?? undefined" class="rounded-xl object-cover w-full lg:w-1/4 mb-8 lg:mb-0" />
+      <div class="lg:w-1/2">
         <div class="flex flex-col">
-            <div class="flex pb-2">
-            <p class="text-l underline" style="font-family:'Viga';">Date de sortie du film</p>
+          <div class="flex pb-2">
+            <p class="text-l underline" style="font-family: 'Viga';">Date de sortie du film</p>
             <p class="text-l ml-5">{{ date_film }}</p>
-        </div>
+          </div>
         <div class="flex pb-2">
             <p class="text-l underline" style="font-family:'Viga';">Les variantes du film </p>
             <p v-for="uneVariante in Variante" class="text-l ml-10"> {{ uneVariante.type }} </p>
@@ -48,19 +46,22 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
                 <p v-for="unGenre in Genre" class="ml-5">{{ unGenre.genre_film }}</p>
         </div>
         </div>
-        <h2 class="mt-5 underline mb-3" style="font-family:'Viga';">Synopsis </h2>
-            <p class="text-justify">{{ description_film }}</p>
-            <h2 class="mt-5 underline mb-3" style="font-family:'Viga';">Acteurs </h2>
-            <div class="flex gap-2">
-                <div v-for="(uneCelbrite, index) in Celebrite" :key="index">
-                    <RouterLink :to="{ name: '/celebrite/[id]', params: { id: uneCelbrite.id } }">
-                        <img :src="uneCelbrite.photo_celebrite" class="rounded-full w-24" alt="Photo Acteurs">
-                    </RouterLink>
+        <div class="">
+            <h2 class="mt-5 underline mb-3" style="font-family:'Viga';">Synopsis </h2>
+                <p class="text-justify">{{ description_film }}</p></div>
+                    <h2 class="mt-5 underline mb-3" style="font-family: 'Viga';">Acteurs </h2>
+                    <div class="flex gap-3">
+                    <div v-for="(uneCelbrite, index) in Celebrite" :key="index">
+                        <RouterLink :to="{ name: '/celebrite/[id]', params: { id: uneCelbrite.id } }">
+                            <img :src="uneCelbrite.photo_celebrite ?? undefined" class="rounded-full w-24" alt="Photo Acteurs" />
+                        </RouterLink>
+                    </div>
+                    </div>
                 </div>
             </div>
-        </div>
+       
             
-        </div>
+
         <div class="flex pb-2">
             <p class="text-l underline"></p>
             <div v-for="(uneSaga, index) in Saga" :key="index">
@@ -77,7 +78,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         <h2 class="text-2xl" style="font-family:'Viga';">Où acheter</h2>
             <div class="ml-10">
                 <p>{{ unSupport.support_type }}</p>
-                    <img :src="unSupport.support_img">
+                    <img :src="unSupport.support_img ?? undefined">
                 <p>Acheter à {{ unSupport.support_prix }} €</p>
                 <RouterLink :to="`/support/${id}`">
                     <button class="rounded-full bg-blue-300 p-2">
@@ -90,7 +91,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         <h2 class="text-2xl" style="font-family:'Viga';">Où louer</h2>
             <div class="ml-10">
                 <p>{{ unePlateforme.plateforme_streaming }}</p>
-                    <img :src="unePlateforme.logo">
+                    <img :src="unePlateforme.logo ?? undefined">
                 <p >Louer à partir de {{ unePlateforme.plateforme_prix }} €</p>
                 <RouterLink :to="`/plateforme/${id}`">
                     <button class="rounded-full bg-blue-300 p-2 text-center">
@@ -100,17 +101,12 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             </div>
         </div>
     </div>
-    
-
-
     <div class="max-w-md mx-auto bg-gray-200 shadow-md rounded-md p-4">
     <!-- Header de l'interface -->
     <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-semibold">Commentaires</h2>
         <!-- Ajout de l'élément pour ajouter un commentaire -->
-        <button id="add-comment-btn" class="text-blue-500 hover:text-blue-700">Ajouter un commentaire</button>
     </div>
-
     <!-- Section des commentaires -->
     <div class="space-y-4">
         <!-- Commentaire 1 -->
@@ -127,7 +123,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <img src="../assets/img/minecraft.png" alt="Avatar" class="w-10 h-10 rounded-full mr-4 object-cover">
             <div>
                 <h3 class="font-semibold">Le nooby</h3>
-                <p class="text-gray-600">Non, ce film est trop long, nnnuuuuuuullllll :(</p>
+                <p class="text-gray-600">Non, ce film est trop long, nnnuuuuuulllll :(</p>
             </div>
         </div>
 

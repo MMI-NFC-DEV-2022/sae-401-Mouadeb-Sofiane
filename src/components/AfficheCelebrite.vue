@@ -12,7 +12,7 @@ defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'
         <div>
             <h1 class="text-center text-6xl mb-16 mt-16" style="font-family:'Viga';">{{ prenom_celebrite }} {{ nom_celebrite }}</h1>
                 <div class="flex gap-4">
-                <img :src="photo_celebrite" class="object-cover rounded-md w-56">
+                <img :src="photo_celebrite ?? undefined" class="object-cover rounded-md w-56">
             
                 <div class="flex flex-col">
                     <div class="flex pb-2">
