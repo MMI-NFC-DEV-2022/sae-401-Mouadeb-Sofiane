@@ -43,6 +43,9 @@ const closeMobileMenu = () => {
                 <RouterLink @click="closeMobileMenu" to="/films" class="block py-2 pr-4 pl-3 text-gray-200 rounded border-b border-transparent ">Films</RouterLink>
               </li>
               <li>
+                <RouterLink @click="closeMobileMenu" to="/celebrite" class="block py-2 pr-4 pl-3 text-gray-200 rounded border-b border-transparent ">Acteurs</RouterLink>
+              </li>
+              <li>
                 <RouterLink @click="closeMobileMenu" to="/films/edit" class="block py-2 pr-4 pl-3 text-gray-200 rounded border-b border-transparent ">Ajoute un film</RouterLink>
               </li>
               <li>
@@ -59,6 +62,9 @@ const closeMobileMenu = () => {
             </li>
             <li>
               <RouterLink @click="closeMobileMenu" to="/films" class="block py-3 pr-4 pl-3 text-gray-200 rounded">Films</RouterLink>
+            </li>
+            <li>
+              <RouterLink @click="closeMobileMenu" to="/celebrite" class="block py-3 pr-4 pl-3 text-gray-200 rounded">Acteurs</RouterLink>
             </li>
             <li>
               <RouterLink @click="closeMobileMenu" to="/films/edit" class="block py-3 pr-4 pl-3 text-gray-200 rounded">Ajouter un film</RouterLink>

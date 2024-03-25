@@ -18,6 +18,8 @@ page d'une saga [Saga](https://filmsm.mouadeb.fr/saga/2)
 
 page d'une plateforme de streaming [plateforme](https://filmsm.mouadeb.fr/plateforme/2)
 
+page de tous les célébrite [Celebrite](https://filmsm.mouadeb.fr/celebrite)
+
 page d'une support[support](https://filmsm.mouadeb.fr/support/7)
 
 page d'un acteur [acteur](https://filmsm.mouadeb.fr/celebrite/1)
