@@ -12,7 +12,7 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
         <div >
             <h1 class="text-center text-6xl mb-16 mt-16">{{ nom_de_la_saga }}</h1>
             <div class="flex gap-4">
-                <img :src="image_saga" class="w-40 h-44">
+                <img :src="image_saga" class="w-40 h-44 object-cover">
             
                 <div class="flex flex-col">
                     <div class="flex pb-2">
@@ -25,8 +25,8 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
         </div>
         <div>
             <p class="text-center mt-5 mb-5 text-3xl">Les films issus de la saga</p>
-            <div class="flex gap-5 items-centerr">
-                    <img v-for="unFilm in Films" :src="unFilm.image_film" >
+            <div class="flex gap-5 m-auto">
+                    <img v-for="unFilm in Films" class="rounded-md m-auto w-40" :src="unFilm.image_film" >
             </div>
         </div>
     </div>
