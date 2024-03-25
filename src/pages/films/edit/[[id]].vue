@@ -3,7 +3,7 @@ import Form from "@/components/Form.vue";
 </script>
 
 <template>
-    <div>
+    <div class="bg-pink-100">
         <Form />
     </div>
 </template>

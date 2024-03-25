@@ -8,7 +8,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 </script>
 
 <template>
-    <div class="p-5 mb-24">
+    <div class="p-5 pb-24 bg-pink-100">
         <div v-for="unSupport in Support">
             <h1 class="text-center text-6xl mb-16 mt-16">{{ unSupport.support_type }}</h1>
             <div class="flex gap-4">
@@ -24,7 +24,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
                         <p class="ml-5">{{ unSupport.support_prix }} €</p>
                     </div>
                     <div class="flex pb-2">
-                        <a :href="unSupport.lien_support1" class="rounded-md p-2 bg-slate-500 text-center">Lien vers le support</a>
+                        <a :href="unSupport.lien_support1" class="rounded-md p-2 bg-slate-700 text-gray-200 text-center">Lien vers le support</a>
                     </div>
                 </div>
             </div>

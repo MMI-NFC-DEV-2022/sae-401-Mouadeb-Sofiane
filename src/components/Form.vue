@@ -27,7 +27,7 @@ if (route.params.id) {
 
 <template>
     <div>
-        <div class="p-2">
+        <div class="p-2 bg-slate-400">
             <h2 class="text-2xl">
                 Résultat (Prévisualisation)
             </h2>

@@ -9,11 +9,11 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 
 <template>
     
-    <div class="p-5">
+    <div class="p-5 bg-pink-100">
         <h1 class="text-center text-6xl mb-16 mt-16">{{ titre_film }}</h1>
         
     <div class="flex gap-4">
-    <img :src="image_film" class="rounded-xl" /> <!-- Placer l'image à gauche -->
+    <img :src="image_film" class="rounded-xl object-cover" /> <!-- Placer l'image à gauche -->
     <div>
         <div class="flex flex-col">
             <div class="flex pb-2">
@@ -21,19 +21,23 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <p class="text-l ml-5">{{ date_film }}</p>
         </div>
         <div class="flex pb-2">
+            <p class="text-l underline">Les variantes du film </p>
+            <p v-for="uneVariante in Variante" class="text-l ml-10"> {{ uneVariante.type }} </p>
+        </div>
+        <div class="flex pb-2">
             <p class="text-l underline">Durée du film</p>
             <p class="text-l ml-10">{{ temps_film }}</p>
         </div>
-        <div class="flex">
+        <div class="flex pb-2">
             <p class="underline">Note du film</p>
             <div class="flex ml-8 pl-2 pb-2">
-                <div v-for="n in note_film ?? 0" class="text-gray-200">
+                <div v-for="n in note_film ?? 0" class="text-gray-400">
                     <svg class="w-5 h-5 fill-current text-yellow-500" viewBox="0 0 24 24">
                         <path d="M12 2L14.47 8.53L21 9.35L16.24 13.77L17.47 20.07L12 17.77L6.53 20.07L7.76 13.77L3 9.35L9.53 8.53L12 2Z" />
                     </svg>
                 </div>
-                <div v-for="n in (5-(note_film??0))" class="text-gray-200 ">
-                    <svg class="w-5 h-5 fill-current text-gray-300" viewBox="0 0 24 24">
+                <div v-for="n in (5-(note_film??0))" class="text-gray-400 ">
+                    <svg class="w-5 h-5 fill-current text-gray-400" viewBox="0 0 24 24">
                         <path d="M12 2L14.47 8.53L21 9.35L16.24 13.77L17.47 20.07L12 17.77L6.53 20.07L7.76 13.77L3 9.35L9.53 8.53L12 2Z" />
                     </svg>
                 </div>
@@ -61,8 +65,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <p class="text-l underline"></p>
             <div v-for="(uneSaga, index) in Saga" :key="index">
                 <RouterLink :to="{ name: '/saga/[id]', params: { id: uneSaga.id } }">
-                    <p class="text-l ml-10"> Saga du fim : </p>
-                    <p class="text-blue-500" v-for="uneSaga in Saga">{{ uneSaga.nom_de_la_saga }}</p>
+                    <p class="text-l ml-10 flex gap-4"> Saga du fim : <p class="text-blue-500" v-for="uneSaga in Saga">{{ uneSaga.nom_de_la_saga }}</p></p>
                 </RouterLink>
             </div>
         </div>
@@ -97,44 +100,61 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             </div>
         </div>
     </div>
+    
 
 
     <div class="max-w-md mx-auto bg-gray-200 shadow-md rounded-md p-4">
     <!-- Header de l'interface -->
     <div class="flex items-center justify-between mb-4">
         <h2 class="text-xl font-semibold">Commentaires</h2>
-        <button class="text-blue-500 hover:text-blue-700">Ajouter un commentaire</button>
+        <!-- Ajout de l'élément pour ajouter un commentaire -->
+        <button id="add-comment-btn" class="text-blue-500 hover:text-blue-700">Ajouter un commentaire</button>
     </div>
 
     <!-- Section des commentaires -->
     <div class="space-y-4">
         <!-- Commentaire 1 -->
-        <div class="flex items-center">
+        <div class="flex items-center comment">
             <img src="../assets/img/avatar.jpg" alt="Avatar" class="w-10 h-10 rounded-full mr-4">
             <div>
-                <h3 class="font-semibold">Utilisateur 1</h3>
-                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3 class="font-semibold">Avatar le maître</h3>
+                <p class="text-gray-600">Ce film est incroyable je pense que cela va être compliqué de le surpasser.</p>
             </div>
         </div>
 
         <!-- Commentaire 2 -->
-        <div class="flex items-center">
-            <img src="../assets/img/avatar.jpg" alt="Avatar" class="w-10 h-10 rounded-full mr-4">
+        <div class="flex items-center comment">
+            <img src="../assets/img/minecraft.png" alt="Avatar" class="w-10 h-10 rounded-full mr-4 object-cover">
             <div>
-                <h3 class="font-semibold">Utilisateur 2</h3>
-                <p class="text-gray-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="font-semibold">Le nooby</h3>
+                <p class="text-gray-600">Non, ce film est trop long, nnnuuuuuuullllll :(</p>
             </div>
         </div>
 
         <!-- Commentaire 3 -->
-        <div class="flex items-center">
+        <div class="flex items-center comment">
             <img src="../assets/img/avatar.jpg" alt="Avatar" class="w-10 h-10 rounded-full mr-4">
             <div>
-                <h3 class="font-semibold">Utilisateur 3</h3>
-                <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h3 class="font-semibold">Avatar le maître</h3>
+                <p class="text-gray-600">Argumente un peu plus, la durée n'est pas un prétexte.</p>
             </div>
         </div>
+            <div class="comment">
+                <!-- Zone de texte pour ajouter un commentaire -->
+                <textarea id="comment-textarea" class="w-full bg-gray-100 rounded-md p-2" placeholder="Votre commentaire..."></textarea>
+                <button id="submit-comment-btn" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Envoyer</button>
+            </div>
+        
     </div>
 </div>
 </div>
 </template>
+
+<style>
+    /* Ajout de styles CSS */
+    .comment {
+        border-left: 4px solid #4299e1; /* Ajout d'une bordure à gauche pour chaque commentaire */
+        padding-left: 1rem; /* Ajout de marge intérieure à gauche pour séparer le texte de la bordure */
+    }
+   
+</style>

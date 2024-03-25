@@ -8,7 +8,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 </script>
 
 <template>
-    <div class="p-5 mb-24">
+    <div class="p-5 pb-24 bg-pink-100">
         <div v-for="unePlateforme in Plateforme">
             <h1 class="text-center text-6xl mb-16 mt-16">{{ unePlateforme.plateforme_streaming }}</h1>
             <div class="flex gap-4">

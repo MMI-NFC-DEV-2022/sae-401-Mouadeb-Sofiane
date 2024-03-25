@@ -8,11 +8,11 @@ defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'
 </script>
 
 <template>
-    <div class="p-5">
+    <div class="p-5 bg-pink-100">
         <div>
             <h1 class="text-center text-6xl mb-16 mt-16">{{ prenom_celebrite }} {{ nom_celebrite }}</h1>
                 <div class="flex gap-4">
-                <img :src="photo_celebrite" class="object-cover w-56">
+                <img :src="photo_celebrite" class="object-cover rounded-md w-56">
             
                 <div class="flex flex-col">
                     <div class="flex pb-2">
@@ -29,14 +29,7 @@ defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'
                     </div>
                     <div class="flex pb-2">
                         
-                    </div>
-                    <div class="flex pb-2">
-                        <p class="text-l underline">Filmographie</p>
-                        <RouterLink :to="`/saga/${id}`">
-                            <p v-for="uneSaga in Saga" class="ml-5 text-blue-500">{{ uneSaga.nom_de_la_saga }}</p>
-                        </RouterLink>
-                    </div>
-                      
+                    </div>  
                 </div>
             </div>
         </div>
