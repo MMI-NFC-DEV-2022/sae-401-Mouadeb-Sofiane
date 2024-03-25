@@ -4,7 +4,7 @@ import { defineProps } from 'vue';
 import { supabase } from '@/supabase';
 const route = useRoute('/celebrite/[id]');
 import type { Database, Tables } from '@/supabase-types';
-defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'Films'>[]} & {Genre:Tables<'Genre'>[]} & {Saga:Tables<'Saga'>[]} & {Variante:Tables<'Variante'>} & {Support:Tables<'Support'>} & {Plateforme:Tables<'Plateforme'>}>()
+defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {Films:Tables<'Films'>[]} & {Genre:Tables<'Genre'>[]} & {Saga:Tables<'Saga'>[]} & {Variante:Tables<'Variante'>} & {Support:Tables<'Support'>} & {Plateforme:Tables<'Plateforme'>}>()
 </script>
 
 <template>
@@ -27,9 +27,16 @@ defineProps <Database["public"]["Tables"]["Celebrite"]["Row"] & {CFilms:Tables<'
                         <p class="text-l underline" style="font-family:'Viga';">Biographie</p>
                         <p class="ml-5 text-justify">{{ bio_celebrite }}</p>
                     </div>
-                    
                 </div>
             </div>
+            <p class="text-l underline text-center" style="font-family:'Viga';">Filmographie</p>
+                    <div class="grid lg:grid-cols-3">
+                        <div class="gap-5 mb-7 mt-8 m-auto" v-for="unFilm in Films">
+                            <RouterLink :to="{ name : '/films/[id]', params: { id: unFilm.id}}" >
+                                <img class="rounded-md m-auto w-40" :src="unFilm.image_film ?? undefined" >
+                            </RouterLink>
+                        </div>
+                    </div>
         </div>
     </div>
 </template>

@@ -25,8 +25,12 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
         </div>
         <div>
             <p class="text-center mt-5 text-3xl" style="font-family:'Viga';">Les films issus de la saga</p>
-            <div class="flex-col lg:flex-row flex gap-5 mb-7 mt-8 m-auto">
-                    <img v-for="unFilm in Films" class="rounded-md m-auto w-40" :src="unFilm.image_film ?? undefined" >
+            <div class="grid lg:grid-cols-3">
+                <div class="gap-5 mb-7 mt-8 m-auto" v-for="unFilm in Films">
+                    <RouterLink :to="{ name : '/films/[id]', params: { id: unFilm.id}}" >
+                        <img class="rounded-md m-auto w-40" :src="unFilm.image_film ?? undefined" >
+                    </RouterLink>
+                </div>
             </div>
         </div>
     </div>
