@@ -25,15 +25,7 @@ export type Database = {
           id_users?: string | null
           nom_agent?: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "public_Agent_id_users_fkey"
-            columns: ["id_users"]
-            isOneToOne: false
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       basket: {
         Row: {
@@ -293,19 +285,25 @@ export type Database = {
       }
       Plateforme: {
         Row: {
+          description_support: string | null
           id: number
+          lien_support: string | null
           logo: string | null
           plateforme_prix: number | null
           plateforme_streaming: string | null
         }
         Insert: {
+          description_support?: string | null
           id?: number
+          lien_support?: string | null
           logo?: string | null
           plateforme_prix?: number | null
           plateforme_streaming?: string | null
         }
         Update: {
+          description_support?: string | null
           id?: number
+          lien_support?: string | null
           logo?: string | null
           plateforme_prix?: number | null
           plateforme_streaming?: string | null

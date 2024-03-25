@@ -9,7 +9,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
 
 <template>
     
-    <div>
+    <div class="p-5">
         <h1 class="text-center text-6xl mb-16 mt-16">{{ titre_film }}</h1>
         
     <div class="flex gap-4">
@@ -45,18 +45,25 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         </div>
         </div>
         <h2 class="mt-5 underline mb-3">Synopsis </h2>
+            <p class="text-justify">{{ description_film }}</p>
+            <h2 class="mt-5 underline mb-3">Acteurs </h2>
+            <div class="flex gap-2">
+                <RouterLink :to="`/celebrite/${id}`" class="flex gap-8">
+                        <div v-for="uneCelbrite in Celebrite">
+                            <img :src="uneCelbrite.photo_celebrite" class="rounded-full w-24" alt="Photo Acteurs">
+                        </div>
+                </RouterLink>
+            </div>
+            </div>
+            
+        </div>
+        <div class="flex pb-2">
+            <p class="text-l underline"></p>
+            <RouterLink :to="`/saga/${id}`" class="flex gap-8">
+                <p class="text-l ml-10" v-for="uneSaga in Saga"> Saga du fim : {{ uneSaga.nom_de_la_saga }}</p>
+            </RouterLink>
+        </div>
 
-    <p>{{ description_film }}</p>
-    <h2 class="mt-5 underline mb-3">Acteurs </h2>
-    <div class="flex gap-2">
-        <RouterLink :to="`/celebrite/${id}`" class="flex gap-8">
-                <div v-for="uneCelbrite in Celebrite">
-                    <img :src="uneCelbrite.photo_celebrite" class="rounded-full w-24" alt="Photo Acteurs">
-                </div>
-        </RouterLink>
-    </div>
-    </div>
-</div>
 <div class="mt-10"> 
 </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-10">
@@ -65,7 +72,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <div class="ml-10">
                 <p>{{ unSupport.support_type }}</p>
                     <img :src="unSupport.support_img">
-                <p>Acheter à {{ unSupport.support_prix }}</p>
+                <p>Acheter à {{ unSupport.support_prix }} €</p>
                 <RouterLink :to="`/support/${id}`">
                     <button class="rounded-full bg-blue-300 p-2">
                         + d'infos
@@ -78,7 +85,7 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <div class="ml-10">
                 <p>{{ unePlateforme.plateforme_streaming }}</p>
                     <img :src="unePlateforme.logo">
-                <p >Louer à partir de {{ unePlateforme.plateforme_prix }}</p>
+                <p >Louer à partir de {{ unePlateforme.plateforme_prix }} €</p>
                 <RouterLink :to="`/plateforme/${id}`">
                     <button class="rounded-full bg-blue-300 p-2 text-center">
                         + d'infos
@@ -126,14 +133,5 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
         </div>
     </div>
 </div>
-
-
-        
-        <p v-for="unGenre in Genre">{{ unGenre.genre_film }}</p>
-        <RouterLink :to="`/celebrite/${id}`">Celebrite</RouterLink>
-        <RouterLink :to="`/genre/${id}`">Genre</RouterLink>
-        <RouterLink :to="`/plateforme/${id}`">Plateforme</RouterLink>
-        <RouterLink :to="`/support/${id}`">Support</RouterLink>
-        <RouterLink :to="`/saga/${id}`">Saga</RouterLink>
-    </div>
+</div>
 </template>
