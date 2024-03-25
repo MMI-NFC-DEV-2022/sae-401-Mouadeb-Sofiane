@@ -48,20 +48,23 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
             <p class="text-justify">{{ description_film }}</p>
             <h2 class="mt-5 underline mb-3">Acteurs </h2>
             <div class="flex gap-2">
-                <RouterLink :to="`/celebrite/${id}`" class="flex gap-8">
-                        <div v-for="uneCelbrite in Celebrite">
-                            <img :src="uneCelbrite.photo_celebrite" class="rounded-full w-24" alt="Photo Acteurs">
-                        </div>
-                </RouterLink>
+                <div v-for="(uneCelbrite, index) in Celebrite" :key="index">
+                    <RouterLink :to="{ name: '/celebrite/[id]', params: { id: uneCelbrite.id } }">
+                        <img :src="uneCelbrite.photo_celebrite" class="rounded-full w-24" alt="Photo Acteurs">
+                    </RouterLink>
+                </div>
             </div>
-            </div>
+        </div>
             
         </div>
         <div class="flex pb-2">
             <p class="text-l underline"></p>
-            <RouterLink :to="`/saga/${id}`" class="flex gap-8">
-                <p class="text-l ml-10" v-for="uneSaga in Saga"> Saga du fim : {{ uneSaga.nom_de_la_saga }}</p>
-            </RouterLink>
+            <div v-for="(uneSaga, index) in Saga" :key="index">
+                <RouterLink :to="{ name: '/saga/[id]', params: { id: uneSaga.id } }">
+                    <p class="text-l ml-10"> Saga du fim : </p>
+                    <p class="text-blue-500" v-for="uneSaga in Saga">{{ uneSaga.nom_de_la_saga }}</p>
+                </RouterLink>
+            </div>
         </div>
 
 <div class="mt-10"> 

@@ -68,6 +68,7 @@ export type Database = {
       }
       Celebrite: {
         Row: {
+          bio_celebrite: string | null
           date_deces: string | null
           date_naissance: string
           id: number
@@ -77,6 +78,7 @@ export type Database = {
           prenom_celebrite: string | null
         }
         Insert: {
+          bio_celebrite?: string | null
           date_deces?: string | null
           date_naissance: string
           id?: number
@@ -86,6 +88,7 @@ export type Database = {
           prenom_celebrite?: string | null
         }
         Update: {
+          bio_celebrite?: string | null
           date_deces?: string | null
           date_naissance?: string
           id?: number
@@ -375,15 +378,21 @@ export type Database = {
       }
       Saga: {
         Row: {
+          description_saga: string | null
           id: number
+          image_saga: string | null
           nom_de_la_saga: string | null
         }
         Insert: {
+          description_saga?: string | null
           id?: number
+          image_saga?: string | null
           nom_de_la_saga?: string | null
         }
         Update: {
+          description_saga?: string | null
           id?: number
+          image_saga?: string | null
           nom_de_la_saga?: string | null
         }
         Relationships: []
@@ -420,19 +429,25 @@ export type Database = {
       }
       Support: {
         Row: {
+          description_support1: string | null
           id: number
+          lien_support1: string | null
           support_img: string | null
           support_prix: number | null
           support_type: string | null
         }
         Insert: {
+          description_support1?: string | null
           id?: number
+          lien_support1?: string | null
           support_img?: string | null
           support_prix?: number | null
           support_type?: string | null
         }
         Update: {
+          description_support1?: string | null
           id?: number
+          lien_support1?: string | null
           support_img?: string | null
           support_prix?: number | null
           support_type?: string | null
