@@ -24,8 +24,8 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
                                 </svg>
                             </div>
                         </div>
-                </div>
-    </div>     
-</div>
+                    </div>
+                </div>     
+        </div>
 </RouterLink>
 </template>

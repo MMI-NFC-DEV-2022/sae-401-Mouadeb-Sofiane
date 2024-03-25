@@ -23,8 +23,8 @@ defineProps <Database["public"]["Tables"]["Films"]["Row"] & {Celebrite:Tables<'C
                         <p class="text-l underline" style="font-family:'Viga';">Prix du support</p>
                         <p class="ml-5">{{ unePlateforme.plateforme_prix }} €</p>
                     </div>
-                    <div class="flex pb-2">
-                        <a :href="unePlateforme.lien_support" class="rounded-md p-2 bg-slate-500 text-center" style="font-family:'Viga';">Lien vers le support</a>
+                    <div class="flex pb-2 justify-center">
+                        <a :href="unePlateforme.lien_support" class="rounded-md p-2  bg-slate-500 text-center" style="font-family:'Viga';">Lien vers le support</a>
                     </div>
                 </div>
             </div>

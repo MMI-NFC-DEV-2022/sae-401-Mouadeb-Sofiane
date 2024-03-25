@@ -18,7 +18,7 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
                     <div class="flex pb-2">
                         <p class="text-l underline" style="font-family:'Viga';">Synopsis de la saga</p>   
                     </div>
-                    <p class="ml-5 mr-5 text-justify">{{ description_saga }}</p>
+                    <p class="ml-5 mr-5 text-justify" style="font-family:'Poppins';">{{ description_saga }}</p>
                 </div>
                 
             </div>
@@ -30,5 +30,4 @@ defineProps <Database["public"]["Tables"]["Saga"]["Row"] & {Films:Tables<'Films'
             </div>
         </div>
     </div>
-    
 </template>
